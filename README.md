@@ -22,7 +22,7 @@ No installation required. Application is deployed to Heroku.
 
 ## Usage
 
-![Note Taker Home Page](./public/assets/notetakerindex.png)
+![Note Taker Home Page](./public/assets/notetakerindex.gif)
 
 ## License
 
