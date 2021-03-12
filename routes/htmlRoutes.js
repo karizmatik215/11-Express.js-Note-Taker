@@ -3,10 +3,11 @@ const path = require('path');
 // ROUTING
 
 module.exports = (app) => {
+  //routes to home page
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
-
+  //routes to notes pages
   app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/notes.html'));
   });

@@ -1,15 +1,18 @@
 const fs = require('fs');
+//using package to give each note a unique id
 const generateUniqueId = require('generate-unique-id');
+//variable created to shorten code below
 let noteData;
 noteData = JSON.parse(fs.readFileSync('db/db.json', 'utf8'));
 
 // ROUTING
-
 module.exports = function (app) {
+  //returns database on api request
   app.get('/api/notes', function (req, res) {
     res.json(noteData);
   });
 
+  //creates a new note with a unique id
   app.post('/api/notes', function (req, res) {
     let newNote = req.body;
     const uniqueId = generateUniqueId({
@@ -27,6 +30,7 @@ module.exports = function (app) {
     res.json(noteData);
   });
 
+  //deletes selected note from database by using the id that is requested
   app.delete('/api/notes/:id', function (req, res) {
     const noteId = req.params.id;
     let newId = 0;
